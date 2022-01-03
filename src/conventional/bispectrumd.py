@@ -147,19 +147,19 @@ def bispectrumd(y, nfft=None, wind=None, nsamp=None, overlap=None):
     Bspec = convolve2d(Bspec,opwind)
     Bspec = Bspec[range(lby2+1,lby2+nfft+1), :][:, np.arange(lby2+1,lby2+nfft+1)]
 
-
   if nfft%2 == 0:
     waxis = np.transpose(np.arange(-1*nfft/2, nfft/2)) / nfft
   else:
     waxis = np.transpose(np.arange(-1*(nfft-1)/2, (nfft-1)/2+1)) / nfft
 
+  #running on linux system without GUI backend will mess up the ouput of test file. Uncomment to see graph in IDE
   # cont1 = plt.contour(abs(Bspec), 4, waxis, waxis)
-  cont = plt.contourf(waxis, waxis, abs(Bspec), 100, cmap=plt.cm.Spectral_r)
-  plt.colorbar(cont)
-  plt.title('Bispectrum estimated via the direct (FFT) method')
-  plt.xlabel('f1')
-  plt.ylabel('f2')
-  plt.show()
+  #cont = plt.contourf(waxis, waxis, abs(Bspec), 100, cmap=plt.cm.Spectral_r)
+  #plt.colorbar(cont)
+  #plt.title('Bispectrum estimated via the direct (FFT) method')
+  #plt.xlabel('f1')
+  #plt.ylabel('f2')
+  #plt.show()
 
   return (Bspec, waxis)
 
