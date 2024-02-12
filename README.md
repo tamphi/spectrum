@@ -1,7 +1,6 @@
-Code Modified by Tam Phi based on the original repo by synergetics @ MIT
 Higher Order Spectrum Estimation toolkit
 ======
-
+Code Modified by Tam Phi based on the original repo by synergetics @ MIT. The below content and Python 2 belong to GitHub user: synergetics
 # Contents
 
 ## Bicoherence
